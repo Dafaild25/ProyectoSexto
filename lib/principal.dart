@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Image.asset('assets/logo.jpg'),
+              Image.asset('imagenes/bat.jpg'),
               Column(
                 children: [
                   ElevatedButton(
