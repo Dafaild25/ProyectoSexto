@@ -6,12 +6,12 @@ class login extends StatefulWidget {
   _LoginStatico createState() => _LoginStatico();
 }
 
-Widget objetoEmail() {
+Widget entradaNombre() {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
       Text(
-        'Email',
+        'Nombre',
         style: TextStyle(
             color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
       ),
@@ -32,8 +32,8 @@ Widget objetoEmail() {
           decoration: InputDecoration(
               border: InputBorder.none,
               contentPadding: EdgeInsets.only(top: 14),
-              prefixIcon: Icon(Icons.email, color: Color(0xff5ac18e)),
-              hintText: 'Email',
+              prefixIcon: Icon(Icons.account_circle, color: Color(0xff5ac18e)),
+              hintText: 'Nombre:',
               hintStyle: TextStyle(
                 color: Colors.black38,
               )),
@@ -43,12 +43,12 @@ Widget objetoEmail() {
   );
 }
 
-Widget objetoContra() {
+Widget entradaCelular() {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
       Text(
-        'Contraseña',
+        'Celular',
         style: TextStyle(
             color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
       ),
@@ -65,13 +65,13 @@ Widget objetoContra() {
         height: 60,
         child: TextField(
           //tipo de texto que va a ingresar
-          obscureText: true,
+          keyboardType: TextInputType.phone,
           style: TextStyle(color: Colors.black87),
           decoration: InputDecoration(
               border: InputBorder.none,
               contentPadding: EdgeInsets.only(top: 14),
-              prefixIcon: Icon(Icons.lock, color: Color(0xff5ac18e)),
-              hintText: 'Contraseña',
+              prefixIcon: Icon(Icons.call, color: Color(0xff5ac18e)),
+              hintText: 'Celular:',
               hintStyle: TextStyle(
                 color: Colors.black38,
               )),
@@ -118,10 +118,10 @@ class _LoginStatico extends State<login> {
                             fontWeight: FontWeight.bold),
                       ),
                       SizedBox(height: 50),
-                      objetoEmail(),
+                      entradaNombre(),
                       //SIZE ES EL ESPACIADO
                       SizedBox(height: 50),
-                      objetoContra(),
+                      entradaCelular(),
                     ],
                   ),
                 ))
