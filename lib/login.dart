@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'principal.dart';
 
 class login extends StatefulWidget {
   @override
@@ -86,6 +87,7 @@ class _LoginStatico extends State<login> {
   @override
   Widget build(BuildContext context) {
     //definir el estilo del boton
+
     final estiloBtn = ElevatedButton.styleFrom(
       backgroundColor: Colors.black,
       foregroundColor: Colors.white,
@@ -132,7 +134,12 @@ class _LoginStatico extends State<login> {
                       SizedBox(height: 50),
                       ElevatedButton(
                           style: estiloBtn,
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => principal()));
+                          },
                           child: Text("Iniciar")),
                     ],
                   ),
