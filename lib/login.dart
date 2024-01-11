@@ -27,6 +27,7 @@ Widget entradaNombre() {
             ]),
         height: 60,
         child: TextField(
+          //Esta linea siguiente hace que l teclado sea letra
           keyboardType: TextInputType.emailAddress,
           style: TextStyle(color: Colors.black87),
           decoration: InputDecoration(
@@ -64,7 +65,7 @@ Widget entradaCelular() {
             ]),
         height: 60,
         child: TextField(
-          //tipo de texto que va a ingresar
+          //tipo de texto que va a ingresar AQUI APARECEN NUMEROS
           keyboardType: TextInputType.phone,
           style: TextStyle(color: Colors.black87),
           decoration: InputDecoration(
@@ -84,6 +85,11 @@ Widget entradaCelular() {
 class _LoginStatico extends State<login> {
   @override
   Widget build(BuildContext context) {
+    //definir el estilo del boton
+    final estiloBtn = ElevatedButton.styleFrom(
+      backgroundColor: Colors.black,
+      foregroundColor: Colors.white,
+    );
     return Scaffold(
         body: AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.light,
@@ -122,6 +128,12 @@ class _LoginStatico extends State<login> {
                       //SIZE ES EL ESPACIADO
                       SizedBox(height: 50),
                       entradaCelular(),
+                      //crear uun boton y le damos el mismo espaciado
+                      SizedBox(height: 50),
+                      ElevatedButton(
+                          style: estiloBtn,
+                          onPressed: () {},
+                          child: Text("Iniciar")),
                     ],
                   ),
                 ))
