@@ -12,7 +12,7 @@ class _PrincipalState extends State<principal> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0x665ac18e),
+      backgroundColor: Color(0xff5ac18e),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
