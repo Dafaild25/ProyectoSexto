@@ -135,10 +135,12 @@ class _LoginStatico extends State<login> {
                       ElevatedButton(
                           style: estiloBtn,
                           onPressed: () {
+                            // Navegar a la pantalla siguiente
                             Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => principal()));
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => principal()),
+                            );
                           },
                           child: Text("Iniciar")),
                     ],

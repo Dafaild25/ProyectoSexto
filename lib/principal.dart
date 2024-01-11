@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_01/creacion.dart';
 import 'package:flutter_01/login.dart';
 
 class principal extends StatefulWidget {
@@ -11,6 +12,7 @@ class _PrincipalState extends State<principal> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0x665ac18e),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
@@ -40,7 +42,13 @@ class _PrincipalState extends State<principal> {
                   height: 20,
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    //
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => creacion()),
+                    );
+                  },
                   child: Text(
                     'Bat Alert',
                     style: TextStyle(color: Colors.black, fontSize: 22),
