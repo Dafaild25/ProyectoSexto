@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'creacion.dart';
 
 class login extends StatefulWidget {
   @override
@@ -132,7 +133,11 @@ class _LoginStatico extends State<login> {
                       SizedBox(height: 50),
                       ElevatedButton(
                           style: estiloBtn,
-                          onPressed: () {},
+                          onPressed: () {
+                            // Navegar a la pantalla siguiente
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => creacion()),
+                            );
+                          },
                           child: Text("Iniciar")),
                     ],
                   ),
