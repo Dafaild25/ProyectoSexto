@@ -12,8 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'BatAlert Login',
       debugShowCheckedModeBanner: false,
-      //home: login(),
-      home: creacion(),
+      home: login(),
     );
   }
 }
