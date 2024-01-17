@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_01/creacion.dart';
+import 'package:flutter_01/principal.dart';
 
 class Tutorados extends StatefulWidget {
   Tutorados({Key? key}) : super(key: key);
@@ -27,99 +27,84 @@ class _TutoradosState extends State<Tutorados> {
       body: Stack(
         children: <Widget>[
           Container(
-            height: double.infinity,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Color(0x665ac18e),
-                  Color(0x995ac18e),
-                  Color(0xcc5ac18e),
-                  Color(0xff5ac18e),
-                ],
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: 100),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Expanded(
-                  child: ListView.builder(
-                    itemCount: contacts.length,
-                    itemBuilder: (context, index) {
-                      final contact = contacts[index];
-                      return ListTile(
-                        title: Text(contact.name),
-                        subtitle: Text('Tutor: ${contact.tutor}'),
-                        trailing: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            ElevatedButton(
-                              onPressed: () {
-                                print('Añadir contacto: ${contact.name}');
-                              },
-                              child: Text('Añadir'),
-                            ),
-                            SizedBox(width: 20),
-                            ElevatedButton(
-                              onPressed: () {
-                                print('Rechazar contacto: ${contact.name}');
-                              },
-                              child: Text('Rechazar'),
-                            ),
-                          ],
-                        ),
-                        onTap: () {
-                          setState(() {
-                            selectedContact = contact;
-                          });
-                        },
-                      );
-                    },
-                  ),
-                ),
-                if (selectedContact != null)
-                  Center(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 214, 234, 244),
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
-                      padding: EdgeInsets.all(40),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text('Información del Tutor',
-                              style: TextStyle(
-                                  fontSize: 16.0, fontWeight: FontWeight.bold)),
-                          SizedBox(height: 8),
-                          Text('Nombre: ${selectedContact!.tutor}'),
-                          SizedBox(height: 8),
-                          Text('Información Adicional'),
-                        ],
-                      ),
+            color: Color(0xff5ac18e),
+            child: Padding(
+              padding: EdgeInsets.symmetric(vertical: 100),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Expanded(
+                    child: ListView.builder(
+                      itemCount: contacts.length,
+                      itemBuilder: (context, index) {
+                        final contact = contacts[index];
+                        return ListTile(
+                          title: Text(contact.name),
+                          subtitle: Text('Tutor: ${contact.tutor}'),
+                          trailing: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              ElevatedButton(
+                                onPressed: () {
+                                  print('Añadir contacto: ${contact.name}');
+                                },
+                                child: Text('Añadir'),
+                              ),
+                              SizedBox(width: 20),
+                              ElevatedButton(
+                                onPressed: () {
+                                  print('Rechazar contacto: ${contact.name}');
+                                },
+                                child: Text('Rechazar'),
+                              ),
+                            ],
+                          ),
+                          onTap: () {
+                            setState(() {
+                              selectedContact = contact;
+                            });
+                          },
+                        );
+                      },
                     ),
                   ),
-                SizedBox(height: 40),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => creacion(),
+                  if (selectedContact != null)
+                    Center(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 214, 234, 244),
+                          borderRadius: BorderRadius.circular(20.0),
+                        ),
+                        padding: EdgeInsets.all(40),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Información del Tutor', style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold)),
+                            SizedBox(height: 8),
+                            Text('Nombre: ${selectedContact!.tutor}'),
+                            SizedBox(height: 8),
+                            Text('Información Adicional'),
+                          ],
+                        ),
                       ),
-                    );
-                  },
-                  child: Text('Retroceder'),
-                  style: ElevatedButton.styleFrom(
-                    primary: const Color.fromARGB(255, 214, 234, 244),
+                    ),
+                  SizedBox(height: 40),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => principal(),
+                        ),
+                      );
+                    },
+                    child: Text('Retroceder'),
+                    style: ElevatedButton.styleFrom(
+                      //primary: const Color.fromARGB(255, 214, 234, 244),
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ],
@@ -148,5 +133,3 @@ class MyApp extends StatelessWidget {
 void main() {
   runApp(MyApp());
 }
-
-
