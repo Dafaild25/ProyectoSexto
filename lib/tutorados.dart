@@ -116,8 +116,8 @@ class _TutoradosState extends State<Tutorados> {
                   },
                   child: Text('Retroceder'),
                   style: ElevatedButton.styleFrom(
-                    primary: const Color.fromARGB(255, 214, 234, 244),
-                  ),
+                      //primary: const Color.fromARGB(255, 214, 234, 244),
+                      ),
                 ),
               ],
             ),
@@ -148,5 +148,3 @@ class MyApp extends StatelessWidget {
 void main() {
   runApp(MyApp());
 }
-
-

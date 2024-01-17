@@ -12,7 +12,8 @@ class creacion extends StatefulWidget {
 }
 
 class _CreacionState extends State<creacion> {
-  final _capturaTexto = TextEditingController(); // Declaramos la variable que obtiene el texto
+  final _capturaTexto =
+      TextEditingController(); // Declaramos la variable que obtiene el texto
   List<String> listaContactos = ['Mamá', 'Leodan', 'Papá', 'Daniel'];
 
   @override
@@ -24,19 +25,21 @@ class _CreacionState extends State<creacion> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextField( //Caja de texto
+            TextField(
+              //Caja de texto
               controller: _capturaTexto,
               decoration: InputDecoration(
                 hintText: 'Nombre',
                 border: const OutlineInputBorder(),
                 suffixIcon: IconButton(
-                  onPressed: (){//Limpiar la caja de texto
+                  onPressed: () {
+                    //Limpiar la caja de texto
                     _capturaTexto.clear();
                   },
                   icon: const Icon(Icons.clear),
                 ),
               ),
-            ),              
+            ),
             const SizedBox(height: 20),
             Container(
               padding: const EdgeInsets.only(left: 16, right: 16),
@@ -47,7 +50,8 @@ class _CreacionState extends State<creacion> {
               child: DropdownButton(
                 hint: const Text("Contactos"), // Combo Box con los contactos
                 dropdownColor: Colors.white, // Color de los items
-                icon: const Icon(Icons.arrow_drop_down), // Icono de la flechita hacia abajo
+                icon: const Icon(
+                    Icons.arrow_drop_down), // Icono de la flechita hacia abajo
                 iconSize: 36, // Tamaño del icono
                 isExpanded: true, // Permite expandir los items
                 underline: const SizedBox(),
@@ -67,25 +71,25 @@ class _CreacionState extends State<creacion> {
                 },
               ),
             ),
+            SizedBox(height: 50),
             ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => login()));
-                  },
-                  child: Text(
-                    'Guardar',
-                    style: TextStyle(color: Colors.black, fontSize: 22),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Color.fromARGB(255, 37, 150, 190),
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 100, vertical: 20),
-                    minimumSize: Size(double.infinity, 50),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                  ),
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => login()));
+              },
+              child: Text(
+                'Guardar',
+                style: TextStyle(color: Colors.black, fontSize: 22),
+              ),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color.fromARGB(255, 37, 150, 190),
+                padding: EdgeInsets.symmetric(horizontal: 100, vertical: 20),
+                minimumSize: Size(double.infinity, 50),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
                 ),
+              ),
+            ),
           ],
         ),
       ),
