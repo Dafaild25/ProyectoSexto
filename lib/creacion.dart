@@ -130,13 +130,6 @@ Widget tutor(){
   );
 }
 
-//UBICACIÓN
-/*Widget ubicacion(){
-  return Scaffold(
-
-  );
-}*/
-
 //DESCRIPCION
 final TextEditingController _detalle = TextEditingController();
 Widget descripcion(){
@@ -229,11 +222,14 @@ class _CreacionState extends State<creacion>{
                     alerta(),
                     SizedBox(height: 20),
                     tutor(),
-                    //SizedBox(height: 20),
-                    //ubicacion(),
                     SizedBox(height: 20),
                     descripcion(),
                     SizedBox(height: 20),
+                    //ubicacion(),
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: Text("Ubicación"),
+                    ),
                   ],
                 ),
               )

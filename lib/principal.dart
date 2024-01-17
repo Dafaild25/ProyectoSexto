@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_01/creacion.dart';
 import 'package:flutter_01/login.dart';
+import 'package:flutter_01/tutorados.dart';
 
 class principal extends StatefulWidget {
   @override
@@ -86,7 +87,10 @@ class _PrincipalState extends State<principal> {
                   height: 20,
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Tutorados()));
+                  },
                   child: Text(
                     'Tutorados',
                     style: TextStyle(color: Colors.black, fontSize: 22),
