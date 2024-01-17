@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_01/creacion.dart';
 import 'login.dart';
 
 void main() {
@@ -11,7 +12,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'BatAlert Login',
       debugShowCheckedModeBanner: false,
-      home: login(),
+      //home: login(),
+      home: creacion(),
     );
   }
 }
